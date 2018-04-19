@@ -1,0 +1,20 @@
+#include <time.h>
+#include <stdio.h>
+#include <iostream>
+
+int main (void)
+{
+   time_t tiempo;
+   struct tm *ti_legible;
+ 
+   //Getting current time of system
+   tiempo = time (NULL);
+ 
+   // Converting current time to local time
+   ti_legible = localtime (&tiempo);
+ 
+   // Displaying date and time in standard format
+   printf("%s", asctime (ti_legible));
+
+  return 0;
+}
