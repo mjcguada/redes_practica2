@@ -33,10 +33,13 @@ int main(int argc, char** argv)
 	if(s != 0){
 		printf("Error en getaddrinfo \n");
 	}
+
  	for (rp = result; rp != NULL; rp = rp->ai_next) {
      	sfd = socket(rp->ai_family, rp->ai_socktype,0);
-          if (sfd == -1)
-              continue;
+          
+	if (sfd == -1){
+		printf("Error en creacion del socket. \n");
+	}
 
           if (connect(sfd, rp->ai_addr, rp->ai_addrlen) != -1)
               break;                  /* Success */
