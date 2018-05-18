@@ -77,10 +77,6 @@ int Socket::recv(char * buffer, Socket ** sock)
 	if(sock != 0){
 		int result =  socket(sa, sa_len,0);
 	}
-
-	if(result != 0)
-		return -1;
-	else return 0;
 }
 
 // ----------------------------------------------------------------------------
