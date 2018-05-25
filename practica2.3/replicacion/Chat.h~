@@ -78,9 +78,7 @@ public:
 
     void net_thread()
     {
-		while(true){
-			UDPServer::server_thread();
-		}
+		UDPServer::server_thread();
     }
 
 private:
